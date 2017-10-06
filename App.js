@@ -6,7 +6,8 @@ export default class App extends React.Component {
     super()
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      isLoggedIn: false
     }
     this.handlePasswordChange = this.handlePasswordChange.bind(this)
     this.handleUserNameChange = this.handleUserNameChange.bind(this)
@@ -14,12 +15,10 @@ export default class App extends React.Component {
   }
 
   handlePasswordChange(text) {
-    console.log(text)
     this.setState({ password: text })
   }
 
   handleUserNameChange(text) {
-    console.log(text)
     this.setState({ username: text })
   }
 
@@ -28,6 +27,7 @@ export default class App extends React.Component {
   }
 
   render() {
+
     return (
       <View style={styles.container}>
         <TextInput
